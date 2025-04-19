@@ -5,36 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Smart Mirror Project</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-  <header>
-    <h1>Smart Mirror with AI Integration</h1>
-    <p>A futuristic smart mirror featuring customizable widgets and intelligent voice interaction.</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>About the Project</h2>
-      <p>
-        Our Smart Mirror project transforms a traditional mirror into a dynamic digital interface. 
-        Built using a Raspberry Pi, the mirror displays real-time widgets such as weather, time, calendar events, and more —
-        all while still functioning as a regular mirror.
-      </p>
-      <p>
-        What makes our mirror unique is its integration with AI. Users can interact with the mirror using voice commands powered by ChatGPT, 
-        enabling tasks like asking questions, getting reminders, or receiving personalized updates — just by speaking.
-      </p>
-    </section>
-<section>
-  <h2>Mirror Construction Layers</h2>
-  <img src="layered-smart-mirror.png" alt="Smart Mirror Side View Layers" class="infographic" />
-  <p class="infographic-caption">Side view breakdown of the smart mirror, showing the touch frame, acrylic mirror layer, and display.</p>
-</section>
-<section>
-  <h2>Project Infographic</h2>
-  <img src="smart-mirror-infographic.png" alt="Smart Mirror Infographic" class="infographic" />
-</section>
-<section>
+<body class="lock-scroll">
+  <!-- Hero Section -->
+<!-- Sticky Navbar (moved out of header) -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#layers">Construction</a></li>
+    <li><a href="#team">Team</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section Only -->
+<header class="hero" id="hero">
+<img src="logo.jpg" alt="Smart Mirror Logo" class="hero-logo">
+  <div class="hero-overlay corner-text">
+    <h1>Welcome to Our Smart Mirror</h1>
+    <p>AI-powered. Widget-rich. Raspberry Pi magic.</p>
+  </div>
+</header>
+  <!-- Hidden Main Content -->
+  <div id="main-content" class="hidden">
+<button id="back-button">← Back to Home</button>
+    <main>
+<div class="content-section" id="about">
+    <h2>About the Project</h2>
+    <p>
+      Our Smart Mirror project transforms a traditional mirror into a dynamic digital interface.
+      Built using a Raspberry Pi, the mirror displays real-time widgets such as weather, time, calendar events, and more — all while still functioning as a regular mirror.
+    </p>
+    <p>
+      What makes our mirror unique is its integration with AI. Users can interact with the mirror using voice commands powered by ChatGPT,
+      enabling tasks like asking questions, getting reminders, or receiving personalized updates — just by speaking.
+    </p>
+  </div>
+
+<div class="content-section" id="features">
+  <!-- Key Features Subheading -->
   <h2><i class="fas fa-sliders-h"></i> Key Features</h2>
   <div class="feature-grid">
     <div class="feature-card">
@@ -58,24 +69,105 @@
       <p>Clean, minimal UI design perfect for smart homes and workspaces.</p>
     </div>
   </div>
-</section>
-    <section>
-      <h2>Meet the Team</h2>
-      <ul>
-        <li>Noah Christensen</li>
-        <li>Jacob Taylor</li>
-        <li>Slay Lucius</li>
-        <li>Baylor Ormes</li>
-        <li>Logan Bryant</li>
-      </ul>
-    </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Smart Mirror Team — All Rights Reserved</p>
-  </footer>
-<div class="ai-bubble">
-  <p><span class="ai-blip">🧠</span> Hello! How can I help you today?</p>
+  <!-- Infographic Subheading -->
+  <h2 style="margin-top: 3rem;"><i class="fas fa-chart-area"></i> Smart Mirror Infographic</h2>
+  <img src="smart-mirror-infographic.png" alt="Smart Mirror Features Infographic" class="infographic" />
+  <p class="infographic-caption">
+    A visual overview of the smart mirror's functionality, AI interaction, and customizable widget layout.
+  </p>
 </div>
+  <div class="content-section" id="layers">
+    <h2><i class="fas fa-layer-group"></i> Mirror Construction Layers</h2>
+    <img src="layered-smart-mirror.png" alt="Smart Mirror Side View Layers" class="infographic" />
+    <p class="infographic-caption">Side view breakdown of the smart mirror, showing the touch frame, acrylic mirror layer, and display.</p>
+  </div>
+
+  <div class="content-section" id="team">
+    <h2><i class="fas fa-users"></i> Meet the Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="noah.jpg" alt="Noah Christensen">
+        <h3>Noah Christensen</h3>
+        <p class="role">Team Manager — Subsystem: Touchscreen</p>
+      </div>
+      <div class="team-card">
+        <img src="jacob.png" alt="Jacob Taylor">
+        <h3>Jacob Taylor</h3>
+        <p class="role">Subsystem: A.I. Integration</p>
+      </div>
+      <div class="team-card">
+        <img src="slay.jpg" alt="Slay Lucius">
+        <h3>Slay Lucius</h3>
+        <p class="role">Subsystem: Display</p>
+      </div>
+      <div class="team-card">
+        <img src="baylor.png" alt="Baylor Ormes">
+        <h3>Baylor Ormes</h3>
+        <p class="role">Subsystem: User Interface</p>
+      </div>
+      <div class="team-card">
+        <img src="logan.jpg" alt="Logan Bryant">
+        <h3>Logan Bryant</h3>
+        <p class="role">Team Lead — Subsystem: Audio I/O</p>
+      </div>
+    </div>
+  </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Smart Mirror Team — All Rights Reserved</p>
+    </footer>
+  </div>
+
+
+  <!-- JS to Reveal Content on Nav Click -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const mainContent = document.getElementById('main-content');
+    const hero = document.getElementById('hero');
+    const backBtn = document.getElementById('back-button');
+    const navLinks = document.querySelectorAll('.navbar a');
+    const sections = document.querySelectorAll('.content-section');
+
+    // Show the selected section, hide others
+    function showSection(id) {
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      const target = document.getElementById(id);
+      if (target) target.classList.add('active');
+    }
+
+    // When a navbar link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+
+        // Reveal main content if hidden
+        if (mainContent.classList.contains('hidden')) {
+          mainContent.classList.remove('hidden');
+          hero.style.display = "none";
+          document.body.classList.remove('lock-scroll');
+        }
+
+        // Show the section user clicked
+        showSection(targetId);
+      });
+    });
+
+    // When the "Back to Home" button is clicked
+    backBtn.addEventListener('click', function () {
+      mainContent.classList.add('hidden');
+      hero.style.display = "flex";
+      document.body.classList.add('lock-scroll');
+    });
+
+    // Show the "about" section by default if revealed
+    showSection("about");
+  });
+</script>
 </body>
 </html>
