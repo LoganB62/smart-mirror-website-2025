@@ -266,7 +266,7 @@ footer {
   height: 80vh;
 background: url('hero-background.png') no-repeat center center;
 background-size: contain;
-background-color: hotpink;
+background-color: #000;
   position: relative;
   display: flex;
   align-items: center;
@@ -327,7 +327,9 @@ body.lock-scroll {
 /* Fullscreen hero setup */
 .hero {
   height: 100vh;
-  background: url('hero-background.png') no-repeat center center/cover;
+background: url('hero-background.png') no-repeat top center;
+  background-size: contain;
+  background-color: #000;
   position: relative;
   display: flex;
   align-items: center;
@@ -484,3 +486,29 @@ body.lock-scroll {
   color: #0058cc;
 }
 
+.photo-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.media-card {
+  text-align: center;
+}
+
+.media-card img,
+.media-card video {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.media-card p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+}
